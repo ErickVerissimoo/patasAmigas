@@ -17,33 +17,8 @@ import java.util.List;
  * @author Erick
  */
 @ApplicationScoped
-public class FuncionarioService implements GenericService<Funcionario, Integer>{
+public class FuncionarioService extends GenericAbstractService<Funcionario, Integer, funcionarioDAO>{
     @Inject
     private funcionarioDAO func;
 
-    @Override
-    public void add(Funcionario entity) {
-        func.add(entity);
-    }
-
-    @Override
-    public void update(Funcionario entity) {
-        func.update(entity);
-    }
-
-    @Override
-    public Funcionario get(Integer id) {
-        return func.get(id);
-    }
-
-    @Override
-    public List<Funcionario> getAll() {
-        return func.getAll();
-    }
-
-    @Override
-    public void delete(Integer id) {
-        func.delete(id);
-    }
-    
    }

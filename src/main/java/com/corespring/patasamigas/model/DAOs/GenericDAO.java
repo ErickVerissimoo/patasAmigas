@@ -17,4 +17,4 @@ public interface GenericDAO<T, ID> {
     List<T> getAll();
     T get(ID id) throws EntityNotFoundException;
     void delete(ID id) throws EntityNotFoundException;
-}
+} 

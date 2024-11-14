@@ -6,11 +6,6 @@ package com.corespring.patasamigas.model.DAOs;
 
 import com.corespring.patasamigas.model.Funcionario;
 import jakarta.enterprise.context.ApplicationScoped;
-import jakarta.inject.Inject;
-import jakarta.inject.Named;
-import jakarta.persistence.EntityNotFoundException;
-import java.util.List;
-import org.hibernate.Session;
 
 /**
  *
@@ -19,9 +14,8 @@ import org.hibernate.Session;
 @ApplicationScoped
 public class funcionarioDAO extends GenericAbstractDAO<Funcionario, Integer>{
 
-    @Override
-    public Class<Funcionario> getEntityClass() {
-        return Funcionario.class;
-    }
+  
+
+   
   
 }

@@ -4,16 +4,18 @@
  */
 package com.corespring.patasamigas.service;
 
-import java.util.Collection;
+import java.util.List;
 
 /**
  *
  * @author Erick
+ * @param <ID>
+ * @param <T>
  */
-public interface GenericService<T, ID> {
+public interface GenericService<ID, T> {
     void add(T entity);
     void update(T entity);
     T get(ID id);
-    Collection<T> getAll();
+    List<T> getAll();
     void delete(ID id);
 }

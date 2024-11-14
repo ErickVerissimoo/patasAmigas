@@ -33,7 +33,7 @@ public class mainServlet extends HttpServlet{
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         List<Funcionario> funcionarios = serv.getAll();
-        System.out.println(funcionarios.get(0).getEmail());
+        
     }
     
     
