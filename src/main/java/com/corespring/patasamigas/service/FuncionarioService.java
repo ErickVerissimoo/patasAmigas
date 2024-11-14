@@ -10,6 +10,7 @@ import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
 import java.util.Collection;
+import java.util.List;
 
 /**
  *
@@ -36,7 +37,7 @@ public class FuncionarioService implements GenericService<Funcionario, Integer>{
     }
 
     @Override
-    public Collection<Funcionario> getAll() {
+    public List<Funcionario> getAll() {
         return func.getAll();
     }
 

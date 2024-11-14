@@ -4,6 +4,7 @@
  */
 package com.corespring.patasamigas.utils;
 
+import com.corespring.patasamigas.model.Funcionario;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.enterprise.inject.Produces;
 import org.hibernate.Session;
@@ -26,10 +27,12 @@ public class HibernateUtils {
         configuration.setProperty("hibernate.dialect", "org.hibernate.dialect.MariaDBDialect");
         configuration.setProperty("hibernate.connection.driver_class", "org.mariadb.jdbc.Driver");
         configuration.setProperty("hibernate.connection.url", "jdbc:mariadb://localhost:3307/teste");
+        configuration.addAnnotatedClass(Funcionario.class);
         this.sessionFactory = configuration.buildSessionFactory();
     }
 
     @Produces
+    @ApplicationScoped
     public SessionFactory getSessionFactory() {
         return sessionFactory;
     }

@@ -4,6 +4,7 @@
  */
 package com.corespring.patasamigas;
 
+import com.corespring.patasamigas.model.Funcionario;
 import com.corespring.patasamigas.service.FuncionarioService;
 import jakarta.inject.Inject;
 import jakarta.servlet.ServletException;
@@ -12,6 +13,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 
 /**
  *
@@ -27,5 +29,12 @@ public class mainServlet extends HttpServlet{
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
     
     }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        List<Funcionario> funcionarios = serv.getAll();
+        System.out.println(funcionarios.get(0).getEmail());
+    }
+    
     
 }
