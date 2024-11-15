@@ -9,16 +9,20 @@ import com.corespring.patasamigas.model.Funcionario;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
-import java.util.Collection;
-import java.util.List;
+import lombok.NoArgsConstructor;
 
 /**
  *
  * @author Erick
  */
 @ApplicationScoped
+
 public class FuncionarioService extends GenericAbstractService<Funcionario, Integer, funcionarioDAO>{
     @Inject
-    private funcionarioDAO func;
-
+    public FuncionarioService(funcionarioDAO dao) {
+        super(dao);
+    }
+    public FuncionarioService(){
+        
+    }
    }

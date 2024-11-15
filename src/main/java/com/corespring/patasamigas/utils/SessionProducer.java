@@ -1,4 +1,4 @@
-package com.corespring.patasamigas.util;
+package com.corespring.patasamigas.utils;
 
 import jakarta.enterprise.context.RequestScoped;
 import jakarta.enterprise.inject.Produces;

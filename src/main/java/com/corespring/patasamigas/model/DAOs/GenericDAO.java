@@ -13,8 +13,29 @@ import java.util.List;
  */
 public interface GenericDAO<T, ID> {
     void add(T entity);
+    /*
+    Atualiza uma entidade com base nos seus dados,
+    caso contrário lança uma EntityNotFoundException
+    
+    */
     void update(T entity) throws EntityNotFoundException;
+
+    /**
+     *
+     * @return 
+     * retorna todos os elementos
+     */
     List<T> getAll();
+    /**
+     * @throws EntityNotFoundException
+   caso contrário lança uma EntityNotFoundException
+    */
+
+
     T get(ID id) throws EntityNotFoundException;
+    /*
+    Deleta uma entidade com base no id, caso
+    contrário lança uma EntityNotFoundException
+    */
     void delete(ID id) throws EntityNotFoundException;
 } 

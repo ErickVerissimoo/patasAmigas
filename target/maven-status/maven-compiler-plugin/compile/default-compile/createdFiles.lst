@@ -1,4 +1,5 @@
 com/corespring/patasamigas/model/Funcionario.class
+com/corespring/patasamigas/service/GenericAbstractService.class
 com/corespring/patasamigas/model/Tutor.class
 com/corespring/patasamigas/model/Funcionario$FuncionarioBuilderImpl.class
 com/corespring/patasamigas/model/Pessoa$PessoaBuilder.class
@@ -8,8 +9,9 @@ com/corespring/patasamigas/model/Pessoa$sexo.class
 com/corespring/patasamigas/model/DAOs/funcionarioDAO.class
 com/corespring/patasamigas/model/Funcionario$FuncionarioBuilder.class
 com/corespring/patasamigas/utils/HibernateUtils.class
+com/corespring/patasamigas/utils/SessionProducer.class
 com/corespring/patasamigas/model/Pessoa.class
 com/corespring/patasamigas/service/FuncionarioService.class
-com/corespring/patasamigas/util/SessionProducer.class
 com/corespring/patasamigas/model/DAOs/GenericAbstractDAO.class
 com/corespring/patasamigas/mainServlet.class
+com/corespring/patasamigas/utils/DatabaseUtils.class

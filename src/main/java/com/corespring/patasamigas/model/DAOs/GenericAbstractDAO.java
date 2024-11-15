@@ -4,7 +4,12 @@
  */
 package com.corespring.patasamigas.model.DAOs;
 
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.enterprise.context.Dependent;
+import jakarta.enterprise.context.RequestScoped;
 import jakarta.inject.Inject;
+import jakarta.inject.Named;
+import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityNotFoundException;
 import java.lang.reflect.ParameterizedType;
 import java.util.List;
@@ -16,12 +21,13 @@ import org.hibernate.Session;
  * @param <T> tipo da classe a ser trabalhada
  * @param <ID> tipo do id
  */
+@Dependent
 public abstract class GenericAbstractDAO<T, ID> implements GenericDAO<T, ID> {
     @Inject
     private Session sessao;
     private final Class<T> entityclass;
     protected GenericAbstractDAO(){
-        entityclass =  (Class<T>) ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[0];
+        entityclass =  (Class<T>) this.getClass();
     }
     @Override
     public void add(T entity){

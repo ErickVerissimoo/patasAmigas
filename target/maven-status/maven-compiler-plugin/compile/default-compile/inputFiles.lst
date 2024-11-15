@@ -6,6 +6,8 @@
 /home/gil/NetBeansProjects/patasAmigas/src/main/java/com/corespring/patasamigas/model/Pessoa.java
 /home/gil/NetBeansProjects/patasAmigas/src/main/java/com/corespring/patasamigas/model/Tutor.java
 /home/gil/NetBeansProjects/patasAmigas/src/main/java/com/corespring/patasamigas/service/FuncionarioService.java
+/home/gil/NetBeansProjects/patasAmigas/src/main/java/com/corespring/patasamigas/service/GenericAbstractService.java
 /home/gil/NetBeansProjects/patasAmigas/src/main/java/com/corespring/patasamigas/service/GenericService.java
+/home/gil/NetBeansProjects/patasAmigas/src/main/java/com/corespring/patasamigas/utils/DatabaseUtils.java
 /home/gil/NetBeansProjects/patasAmigas/src/main/java/com/corespring/patasamigas/utils/HibernateUtils.java
 /home/gil/NetBeansProjects/patasAmigas/src/main/java/com/corespring/patasamigas/utils/SessionProducer.java
