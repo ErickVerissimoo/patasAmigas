@@ -18,4 +18,5 @@ public interface GenericService<ID, T> {
     T get(ID id);
     List<T> getAll();
     void delete(ID id);
+    boolean exists(ID id);
 }

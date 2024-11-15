@@ -55,5 +55,10 @@ public abstract class GenericAbstractService<T, ID, DAO extends GenericAbstractD
         
         return dao.get(id);
     }
+
+    @Override
+    public boolean exists(ID id) {
+        return dao.exists(id);
+    }
     
 }

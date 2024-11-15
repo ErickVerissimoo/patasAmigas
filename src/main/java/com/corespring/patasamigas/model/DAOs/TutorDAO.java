@@ -5,7 +5,6 @@
 package com.corespring.patasamigas.model.DAOs;
 
 import com.corespring.patasamigas.model.Tutor;
-import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.enterprise.context.Dependent;
 
 /**

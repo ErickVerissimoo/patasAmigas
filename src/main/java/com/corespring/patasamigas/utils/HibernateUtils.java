@@ -7,11 +7,8 @@ package com.corespring.patasamigas.utils;
 import com.corespring.patasamigas.model.Animal;
 import com.corespring.patasamigas.model.Funcionario;
 import com.corespring.patasamigas.model.Tutor;
-import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.enterprise.context.Dependent;
-import jakarta.enterprise.context.RequestScoped;
 import jakarta.enterprise.inject.Produces;
-import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
@@ -21,7 +18,7 @@ import org.hibernate.cfg.Configuration;
  */
 @Dependent
 public class HibernateUtils {
-     private static  SessionFactory sessionFactory;
+     private static final  SessionFactory sessionFactory;
 static{
        Configuration configuration = new Configuration();
         configuration.setProperty("hibernate.connection.username","erick" );

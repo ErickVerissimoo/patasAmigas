@@ -4,14 +4,10 @@
  */
 package com.corespring.patasamigas.model.DAOs;
 
-import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.enterprise.context.Dependent;
-import jakarta.enterprise.context.RequestScoped;
 import jakarta.inject.Inject;
-import jakarta.inject.Named;
-import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityNotFoundException;
-import java.lang.reflect.ParameterizedType;
+import jakarta.persistence.Query;
 import java.util.List;
 import org.hibernate.Session;
 
@@ -71,6 +67,13 @@ public abstract class GenericAbstractDAO<T, ID> implements GenericDAO<T, ID> {
         sessao.merge(entity);
                 
         sessao.getTransaction().commit();
+    }
+
+    @Override
+    public boolean exists(ID id) {
+        Query consulta = sessao.createQuery("Select p from " + entityclass.getSimpleName() + " p where p.id=:id ", entityclass);
+        consulta.setParameter("id", id);
+        return consulta.getSingleResult() ==null;
     }
    
 }

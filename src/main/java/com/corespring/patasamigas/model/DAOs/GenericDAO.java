@@ -12,6 +12,9 @@ import java.util.List;
  * @param <ID>
  */
 public interface GenericDAO<T, ID> {
+    
+    boolean exists(ID id);
+    
     void add(T entity);
     /*
     Atualiza uma entidade com base nos seus dados,
@@ -27,6 +30,8 @@ public interface GenericDAO<T, ID> {
      */
     List<T> getAll();
     /**
+     * @param id
+     * @return 
      * @throws EntityNotFoundException
    caso contrário lança uma EntityNotFoundException
     */

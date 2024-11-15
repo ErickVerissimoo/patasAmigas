@@ -4,7 +4,6 @@
  */
 package com.corespring.patasamigas;
 
-import com.corespring.patasamigas.model.Animal;
 import com.corespring.patasamigas.model.Tutor;
 import com.corespring.patasamigas.service.FuncionarioService;
 import com.corespring.patasamigas.service.TutorService;
