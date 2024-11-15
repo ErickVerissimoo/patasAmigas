@@ -5,14 +5,12 @@
 package com.corespring.patasamigas.model.DAOs;
 
 import com.corespring.patasamigas.model.Funcionario;
-import jakarta.enterprise.context.ApplicationScoped;
-import jakarta.inject.Inject;
-import org.hibernate.Session;
+import jakarta.enterprise.context.Dependent;
 
 /**
  *
  * @author Erick
  */
-@ApplicationScoped
+@Dependent
 public class funcionarioDAO extends GenericAbstractDAO<Funcionario, Integer>{
 }

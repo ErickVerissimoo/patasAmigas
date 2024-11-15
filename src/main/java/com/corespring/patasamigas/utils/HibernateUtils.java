@@ -4,8 +4,12 @@
  */
 package com.corespring.patasamigas.utils;
 
+import com.corespring.patasamigas.model.Animal;
 import com.corespring.patasamigas.model.Funcionario;
+import com.corespring.patasamigas.model.Tutor;
 import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.enterprise.context.Dependent;
+import jakarta.enterprise.context.RequestScoped;
 import jakarta.enterprise.inject.Produces;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -15,12 +19,11 @@ import org.hibernate.cfg.Configuration;
  *
  * @author Erick
  */
-@ApplicationScoped
+@Dependent
 public class HibernateUtils {
-     private final SessionFactory sessionFactory;
-
-    public HibernateUtils() {
-        Configuration configuration = new Configuration();
+     private static  SessionFactory sessionFactory;
+static{
+       Configuration configuration = new Configuration();
         configuration.setProperty("hibernate.connection.username","erick" );
         configuration.setProperty("hibernate.connection.password", "erick");
         configuration.setProperty("hibernate.hbm2ddl.auto","update" );
@@ -28,11 +31,12 @@ public class HibernateUtils {
         configuration.setProperty("hibernate.connection.driver_class", "org.mariadb.jdbc.Driver");
         configuration.setProperty("hibernate.connection.url", "jdbc:mariadb://localhost:3307/teste");
         configuration.addAnnotatedClass(Funcionario.class);
-        this.sessionFactory = configuration.buildSessionFactory();
-    }
+        configuration.addAnnotatedClass(Tutor.class);
+        configuration.addAnnotatedClass(Animal.class);
+        sessionFactory = configuration.buildSessionFactory();
+}
 
     @Produces
-    @ApplicationScoped
     public SessionFactory getSessionFactory() {
         return sessionFactory;
     }

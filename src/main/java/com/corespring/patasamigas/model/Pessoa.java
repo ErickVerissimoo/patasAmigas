@@ -4,6 +4,7 @@
  */
 package com.corespring.patasamigas.model;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -40,9 +41,9 @@ public abstract class Pessoa {
     private String CPF;
     
     private String senha;
-    @Enumerated
-    private sexo Sexo;
-    private enum sexo{
-        MASCULINO, FEMININO;
+    @Enumerated(EnumType.STRING)
+    private Sexo Sexo;
+    private enum Sexo{
+        MASCULINO, FEMININO
     }
 }

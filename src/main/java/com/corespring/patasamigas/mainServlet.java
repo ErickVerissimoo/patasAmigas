@@ -4,20 +4,19 @@
  */
 package com.corespring.patasamigas;
 
-import com.corespring.patasamigas.model.Funcionario;
-import com.corespring.patasamigas.model.Pessoa;
+import com.corespring.patasamigas.model.Animal;
+import com.corespring.patasamigas.model.Tutor;
 import com.corespring.patasamigas.service.FuncionarioService;
-import com.corespring.patasamigas.utils.DatabaseUtils;
-import jakarta.inject.Inject;
+import com.corespring.patasamigas.service.TutorService;
+
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import jakarta.inject.Inject;
+
 
 /**
  *
@@ -27,8 +26,9 @@ import java.util.logging.Logger;
 public class mainServlet extends HttpServlet{
     @Inject
     private FuncionarioService serv;
-
-    public mainServlet() {}
+    @Inject
+    private TutorService tot;
+   
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
     
@@ -36,13 +36,10 @@ public class mainServlet extends HttpServlet{
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        Funcionario person = Funcionario.builder().nome("erickws").CPF("33030323s").email("erickverissimodasilva144@gmail").build();
-        try {
-            System.out.println(DatabaseUtils.exists(person));
-        } catch (Throwable ex) {
-            Logger.getLogger(mainServlet.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
+       
+        Tutor turor = Tutor.builder().CPF("34340232").senha("senha legal").nome("erick").build();
+        tot.add(turor);
+    }}
     
     
-}
+

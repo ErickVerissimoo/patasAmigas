@@ -19,13 +19,15 @@ import lombok.NoArgsConstructor;
  * @param <ID>
  */
 @Dependent
-@NoArgsConstructor
 public abstract class GenericAbstractService<T, ID, DAO extends GenericAbstractDAO<T, ID>> implements GenericService<ID, T>{
    
     private DAO dao;
       @Inject
     public GenericAbstractService(DAO dao) {
         this.dao = dao;
+    }
+    public GenericAbstractService(){
+        
     }
     @Override
     public void add(T entity) {
