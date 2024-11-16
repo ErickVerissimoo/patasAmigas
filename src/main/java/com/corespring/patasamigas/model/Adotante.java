@@ -1,17 +1,30 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package com.corespring.patasamigas.model;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
+import java.util.Set;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.experimental.SuperBuilder;
 
 /**
  *
  * @author Erick
  */
 @Entity
-public class Adotante extends Pessoa{
-    
-    
+@Getter
+@Setter
+@SuperBuilder
+@NoArgsConstructor
+@AllArgsConstructor
+public class Adotante extends Pessoa {
+
+    @OneToMany(mappedBy = "adotante")
+    private Set<Animal> animal;
+    @OneToOne(mappedBy = "adotante")
+    private Preferencias pref;
 }

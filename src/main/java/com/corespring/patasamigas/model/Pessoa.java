@@ -16,34 +16,29 @@ import java.time.LocalDate;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 import org.hibernate.annotations.NaturalId;
-
 /**
  *
  * @author Erick
  */
-@Data
-@MappedSuperclass
 @SuperBuilder
-@NoArgsConstructor
+@MappedSuperclass
 @AllArgsConstructor
-public abstract class Pessoa {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+@NoArgsConstructor
+@Getter
+@Setter
+public abstract class Pessoa extends SerVivo {
+   
     @NaturalId
     @Email(message = "Email não pode ser nulo")
     private String email;
-    private String nome;
     private LocalDate dataNascimento;
     private String CPF;
-    
+    private String telefone;
     private String senha;
-    @Enumerated(EnumType.STRING)
-    private Sexo Sexo;
-    private enum Sexo{
-        MASCULINO, FEMININO
-    }
+
 }

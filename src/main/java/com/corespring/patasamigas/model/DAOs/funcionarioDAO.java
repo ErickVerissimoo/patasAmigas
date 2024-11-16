@@ -13,4 +13,10 @@ import jakarta.enterprise.context.Dependent;
  */
 @Dependent
 public class funcionarioDAO extends GenericAbstractDAO<Funcionario, Integer>{
+
+    @Override
+    public Class<Funcionario> getEntityClass() {
+        return Funcionario.class;
+    }
+
 }

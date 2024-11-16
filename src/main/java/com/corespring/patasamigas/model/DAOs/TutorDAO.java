@@ -13,5 +13,10 @@ import jakarta.enterprise.context.Dependent;
  */
 @Dependent
 public class TutorDAO extends GenericAbstractDAO<Tutor, Integer>{
+
+    @Override
+    public Class<Tutor> getEntityClass() {
+        return Tutor.class;
+    }
     
 }

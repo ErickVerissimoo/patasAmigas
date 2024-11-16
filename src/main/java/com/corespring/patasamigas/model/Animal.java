@@ -7,42 +7,43 @@ package com.corespring.patasamigas.model;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.Lob;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
 import java.time.LocalDate;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.experimental.SuperBuilder;
 
 /**
  *
  * @author Erick
  */
-@Data
 @Entity
-public class Animal {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+@Getter
+@Setter
+@SuperBuilder
+@NoArgsConstructor
+@AllArgsConstructor
+public class Animal extends SerVivo{
+  
     @ManyToOne
+    @JoinColumn(name = "tutor_id")
     private Tutor tutor;
-    private String nome;
-    private Integer idade;
-    private Sexo sexo;
     private String especie;
-    private LocalDate dataCadastro;
+    private LocalDate dataResgate;
     private String raca;
-    @OneToOne(mappedBy = "animal")
-    private HistoricoMedico historico;
+    @Lob
+    private byte[] foto;
     @Enumerated(EnumType.STRING)
     private Status status;
-    public Animal(){
-        dataCadastro = LocalDate.now();
-    }
-    private enum Sexo{
-        MASCULINO, FEMININO
-    }
+    
+    private Adotante adotante;
+   
     private enum Status{
         Disponivel, EmProcesso, Adotado
     }

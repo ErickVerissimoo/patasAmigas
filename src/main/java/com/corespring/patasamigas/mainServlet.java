@@ -4,7 +4,12 @@
  */
 package com.corespring.patasamigas;
 
+import com.corespring.patasamigas.model.Adotante;
+import com.corespring.patasamigas.model.Animal;
+import com.corespring.patasamigas.model.Funcionario;
 import com.corespring.patasamigas.model.Tutor;
+import com.corespring.patasamigas.service.AdotanteService;
+import com.corespring.patasamigas.service.AnimalService;
 import com.corespring.patasamigas.service.FuncionarioService;
 import com.corespring.patasamigas.service.TutorService;
 
@@ -27,7 +32,10 @@ public class mainServlet extends HttpServlet{
     private FuncionarioService serv;
     @Inject
     private TutorService tot;
-   
+    @Inject
+    private AnimalService service;
+    @Inject
+    private AdotanteService adot;
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
     
@@ -35,10 +43,26 @@ public class mainServlet extends HttpServlet{
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-       
-        Tutor turor = Tutor.builder().CPF("34340232").senha("senha legal").nome("erick").build();
-        tot.add(turor);
-    }}
+        tot.add(new Tutor());
+        serv.add(new Funcionario());
+        adot.add(new Adotante());
+        service.add(new Animal());
+    }
+
+    @Override
+    protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+    }
+
+    @Override
+    protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    
+
+    }
+
+    
+
+}
     
     
 

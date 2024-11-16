@@ -6,7 +6,11 @@ package com.corespring.patasamigas.model;
 
 import jakarta.persistence.Entity;
 import java.time.LocalDate;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 import org.hibernate.annotations.DynamicInsert;
 
@@ -14,9 +18,12 @@ import org.hibernate.annotations.DynamicInsert;
  *
  * @author Erick
  */
-@SuperBuilder
-@DynamicInsert
 @Entity
+@Getter
+@Setter
+@SuperBuilder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Funcionario extends Pessoa{
     private LocalDate dataContratacao;
     private String cargo;

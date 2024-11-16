@@ -4,6 +4,7 @@
  */
 package com.corespring.patasamigas.model.DAOs;
 
+import com.corespring.patasamigas.model.SerVivo;
 import jakarta.enterprise.context.Dependent;
 import jakarta.inject.Inject;
 import jakarta.persistence.EntityNotFoundException;
@@ -18,13 +19,11 @@ import org.hibernate.Session;
  * @param <ID> tipo do id
  */
 @Dependent
-public abstract class GenericAbstractDAO<T, ID> implements GenericDAO<T, ID> {
+public abstract class GenericAbstractDAO<T extends SerVivo, ID> implements GenericDAO<T, ID> {
     @Inject
     private Session sessao;
-    private final Class<T> entityclass;
-    protected GenericAbstractDAO(){
-        entityclass =  (Class<T>) this.getClass();
-    }
+    private final Class<T> entityclass = getEntityClass();
+    public GenericAbstractDAO(){}    
     @Override
     public void add(T entity){
         sessao.beginTransaction();
@@ -75,5 +74,5 @@ public abstract class GenericAbstractDAO<T, ID> implements GenericDAO<T, ID> {
         consulta.setParameter("id", id);
         return consulta.getSingleResult() ==null;
     }
-   
+   public abstract Class<T> getEntityClass();
 }

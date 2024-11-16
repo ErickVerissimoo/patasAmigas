@@ -7,15 +7,15 @@ package com.corespring.patasamigas.service;
 import com.corespring.patasamigas.model.DAOs.funcionarioDAO;
 import com.corespring.patasamigas.model.Funcionario;
 import jakarta.enterprise.context.ApplicationScoped;
-import org.hibernate.service.spi.InjectService;
+import jakarta.inject.Inject;
 
 /**
  *
  * @author Erick
  */
 @ApplicationScoped
-
 public class FuncionarioService extends GenericAbstractService<Funcionario, Integer, funcionarioDAO>{
+    @Inject
     public FuncionarioService(funcionarioDAO dao) {
         super(dao);
     }

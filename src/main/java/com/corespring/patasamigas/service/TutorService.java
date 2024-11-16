@@ -8,7 +8,6 @@ import com.corespring.patasamigas.model.DAOs.TutorDAO;
 import com.corespring.patasamigas.model.Tutor;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
-import org.hibernate.service.spi.InjectService;
 
 
 /**
@@ -22,6 +21,5 @@ public class TutorService extends GenericAbstractService<Tutor, Integer, TutorDA
         super(dao);
     }
     public TutorService(){
-        super();
     }
 }

@@ -5,11 +5,10 @@
 package com.corespring.patasamigas.service;
 
 import com.corespring.patasamigas.model.DAOs.GenericAbstractDAO;
+import com.corespring.patasamigas.model.SerVivo;
 import jakarta.enterprise.context.Dependent;
 import jakarta.inject.Inject;
-import jakarta.inject.Named;
 import java.util.List;
-import lombok.NoArgsConstructor;
 
 /**
  *
@@ -19,7 +18,7 @@ import lombok.NoArgsConstructor;
  * @param <ID>
  */
 @Dependent
-public abstract class GenericAbstractService<T, ID, DAO extends GenericAbstractDAO<T, ID>> implements GenericService<ID, T>{
+public abstract class GenericAbstractService<T extends SerVivo, ID, DAO extends GenericAbstractDAO<T, ID>> implements GenericService<ID , T>{
    
     private DAO dao;
       @Inject
