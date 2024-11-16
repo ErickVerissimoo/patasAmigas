@@ -2,6 +2,7 @@
 package com.corespring.patasamigas.model;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import java.util.Set;
@@ -25,6 +26,7 @@ public class Adotante extends Pessoa {
 
     @OneToMany(mappedBy = "adotante")
     private Set<Animal> animal;
-    @OneToOne(mappedBy = "adotante")
+    @OneToOne
+    @JoinColumn(name = "preferencias_id", referencedColumnName = "id")
     private Preferencias pref;
 }

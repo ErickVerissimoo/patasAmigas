@@ -7,6 +7,8 @@ package com.corespring.patasamigas.utils;
 import com.corespring.patasamigas.model.Adotante;
 import com.corespring.patasamigas.model.Animal;
 import com.corespring.patasamigas.model.Funcionario;
+import com.corespring.patasamigas.model.HistoricoMedico;
+import com.corespring.patasamigas.model.Preferencias;
 import com.corespring.patasamigas.model.Tutor;
 import jakarta.enterprise.context.Dependent;
 import jakarta.enterprise.inject.Produces;
@@ -32,6 +34,8 @@ static{
         configuration.addAnnotatedClass(Tutor.class);
         configuration.addAnnotatedClass(Animal.class);
         configuration.addAnnotatedClass(Adotante.class);
+        configuration.addAnnotatedClass(Preferencias.class);
+        configuration.addAnnotatedClass(HistoricoMedico.class);
         sessionFactory = configuration.buildSessionFactory();
 }
 

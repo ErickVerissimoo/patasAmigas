@@ -42,6 +42,8 @@ public class Animal extends SerVivo{
     @Enumerated(EnumType.STRING)
     private Status status;
     
+    @ManyToOne
+    @JoinColumn(name = "adotante_id", nullable = true)
     private Adotante adotante;
    
     private enum Status{

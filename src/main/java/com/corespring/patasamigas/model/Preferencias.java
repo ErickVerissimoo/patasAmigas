@@ -49,8 +49,8 @@ public class Preferencias {
         private IDADE idade;
         @Enumerated(EnumType.STRING)
         private TIPO Tipo;
-        @OneToOne
-        @JoinColumn(name = "adotante_id")
-        private Adotante adotante;
+        @OneToOne(mappedBy = "pref")
+        
+        private Adotante adotador;
     }
 
