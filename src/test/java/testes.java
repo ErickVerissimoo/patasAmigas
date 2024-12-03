@@ -1,8 +1,8 @@
 
-import com.corespring.patasamigas.model.Adotante;
-import com.corespring.patasamigas.model.Animal;
-import com.corespring.patasamigas.model.DAOs.GenericAbstractDAO;
-import com.corespring.patasamigas.model.Preferencias;
+import com.patasamigas.model.Adotante;
+import com.patasamigas.model.Animal;
+import com.patasamigas.model.DAOs.GenericAbstractDAO;
+import com.patasamigas.model.Preferencias;
 import org.junit.jupiter.api.Test;
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
